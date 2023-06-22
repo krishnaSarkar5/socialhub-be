@@ -14,39 +14,36 @@ import java.util.List;
 @Configuration
 public class OpenAPIConfig {
 
-    @Value("${bezkoder.openapi.dev-url}")
-    private String devUrl;
-
-    @Value("${bezkoder.openapi.prod-url}")
-    private String prodUrl;
+//    @Value("${bezkoder.openapi.dev-url}")
+//    private String devUrl;
+//
+//    @Value("${bezkoder.openapi.prod-url}")
+//    private String prodUrl;
 
     @Bean
     public OpenAPI myOpenAPI() {
-        Server devServer = new Server();
-        devServer.setUrl(devUrl);
-        devServer.setDescription("Server URL in Development environment");
+//        Server devServer = new Server();
+//        devServer.setUrl(devUrl);
+//        devServer.setDescription("Server URL in Development environment");
 
-        Server prodServer = new Server();
-        prodServer.setUrl(prodUrl);
-        prodServer.setDescription("Server URL in Production environment");
+//        Server prodServer = new Server();
+//        prodServer.setUrl(prodUrl);
+//        prodServer.setDescription("Server URL in Production environment");
 
         Contact contact = new Contact();
-        contact.setEmail("bezkoder@gmail.com");
-        contact.setName("BezKoder");
-        contact.setUrl("https://www.bezkoder.com");
+        contact.setEmail("krishnasarkar95@gmail.com");
+        contact.setName("Krishna Sarkar");
 
         License mitLicense = new License().name("MIT License").url("https://choosealicense.com/licenses/mit/");
 
         Info info = new Info()
-                .title("Tutorial Management API")
+                .title("SocialHub-Backend")
                 .version("1.0")
                 .contact(contact)
-                .description("This API exposes endpoints to manage tutorials.").termsOfService("https://www.bezkoder.com/terms")
-                .title("test")
-                .description("test")
-
+                .description("This API exposes endpoints to SocailHub Platform")
+                .termsOfService("https://www.bezkoder.com/terms")
                 .license(mitLicense);
 
-        return new OpenAPI().info(info).servers(List.of(devServer, prodServer));
+        return new OpenAPI().info(info);
     }
 }
