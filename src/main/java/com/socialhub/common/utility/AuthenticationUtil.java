@@ -13,8 +13,4 @@ public class AuthenticationUtil {
         return (UserToken) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
     }
 
-    public Long getPartyIdFromCurrentLoggedInUser(){
-        return ((UserToken) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getId();
-    }
-
 }
