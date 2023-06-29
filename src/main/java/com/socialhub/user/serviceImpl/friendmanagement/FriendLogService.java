@@ -6,17 +6,17 @@ import com.socialhub.common.utility.ActiveInactiveStatusUtil;
 import com.socialhub.common.utility.AuthenticationUtil;
 import com.socialhub.common.utility.ResponseUtil;
 import com.socialhub.dto.ResponseData;
+import com.socialhub.user.dto.friend.FriendRequestResponseDto;
 import com.socialhub.user.dto.friend.IdDto;
 import com.socialhub.user.entity.FriendLog;
 import com.socialhub.user.entity.User;
 import com.socialhub.user.serviceImpl.daoservice.FriendLogDaoService;
 import com.socialhub.user.serviceImpl.daoservice.UserDaoService;
-import lombok.extern.apachecommons.CommonsLog;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Component
 public class FriendLogService {
@@ -113,7 +113,59 @@ public class FriendLogService {
 
 
 
+    public ResponseData getReceivedFriendRequestList(){
 
+        User loggedInUser = getLoggedInUser();
+
+        List<FriendLog> friendLogList = getAllReceivedFriendLog(loggedInUser.getId());
+
+        List<FriendRequestResponseDto> friendRequestResponseDtos = convertEntityListTODtoList(friendLogList);
+
+        return responseUtil.successResponse(friendRequestResponseDtos);
+
+
+    }
+
+
+    private List<FriendLog> getAllReceivedFriendLog(Long userId){
+        return friendLogDaoService.getAllReceivedFriendRequest(userId);
+    }
+
+
+    private List<FriendRequestResponseDto> convertEntityListTODtoList(List<FriendLog> friendLogList){
+       return friendLogList.stream().map(fl->new FriendRequestResponseDto(fl.getRequestedTo(),fl.getCreatedAt())).collect(Collectors.toList());
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    public ResponseData getSentFriendRequestList(){
+
+        User loggedInUser = getLoggedInUser();
+
+        List<FriendLog> sentFriendLogList = getSentFriendLogList(loggedInUser.getId());
+
+        List<FriendRequestResponseDto> sentFriendRequestResponseDtos = convertEntityListTODtoList(sentFriendLogList);
+
+        return responseUtil.successResponse(sentFriendRequestResponseDtos);
+
+    }
+
+
+
+
+
+    private List<FriendLog> getSentFriendLogList(Long userId){
+        return friendLogDaoService.getAllSentFriendRequest(userId);
+    }
 
 
 

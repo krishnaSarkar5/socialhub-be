@@ -25,7 +25,12 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
+    private String firstName;
+
+    private String lastName;
+
+
     @Column(name = "email" , nullable = false,unique = true)
     private String email;
 
@@ -55,6 +60,8 @@ public class User {
         this.password=requestDto.getPassword();
         this.gender= requestDto.getGender();
         this.images=userImages;
+        this.firstName=requestDto.getFirstName();
+        this.lastName=requestDto.getLastName();
     }
 
 

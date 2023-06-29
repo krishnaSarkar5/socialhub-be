@@ -38,7 +38,6 @@ public class CreateUserRequestDto {
     private String gender;
 
 
-
     public void validate(){
 
         Map<String,Object> errorMap = new HashMap<>();

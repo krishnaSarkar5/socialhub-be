@@ -20,7 +20,7 @@ public class FriendLogDaoService {
     }
 
 
-    public List<FriendLog> getAllFriendRequest(Long userId){
+    public List<FriendLog> getAllReceivedFriendRequest(Long userId){
         return friendLogRepository.findAllByRequestedToIdAndActionAndStatusOrderByCreatedAtDesc(userId, FriendAction.FRIEND_REQUEST_SENT.getValue(),ActiveInactiveStatusUtil.getACTIVE());
     }
 

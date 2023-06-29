@@ -1,7 +1,6 @@
 package com.socialhub.user.serviceImpl.friendmanagement;
 
 import com.socialhub.dto.ResponseData;
-import com.socialhub.user.dto.friend.FriendActionIdDto;
 import com.socialhub.user.dto.friend.IdDto;
 import com.socialhub.user.service.FriendService;
 import org.springframework.stereotype.Service;
@@ -14,7 +13,7 @@ public class FriendServiceImpl implements FriendService {
     private FriendLogService friendLogService;
 
     public FriendServiceImpl(FriendLogService friendLogService) {
-        this.friendLogService = friendLogService;
+        this.friendLogService=friendLogService;
     }
 
     @Override
@@ -29,12 +28,13 @@ public class FriendServiceImpl implements FriendService {
 
     @Override
     public ResponseData getAllSentRequest() {
-        return null;
+        return friendLogService.getSentFriendRequestList();
     }
 
     @Override
     public ResponseData getAllReceivedRequest() {
-        return null;
+
+        return friendLogService.getReceivedFriendRequestList();
     }
 
     @Override
