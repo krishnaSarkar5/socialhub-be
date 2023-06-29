@@ -37,4 +37,10 @@ public class FriendLogDaoService {
         return friendLogRepository.findAllByRequestedByIdAndActionAndStatusOrderByCreatedAtDesc(userId, FriendAction.FRIEND_REQUEST_SENT.getValue(),ActiveInactiveStatusUtil.getACTIVE());
     }
 
+
+    public List<FriendLog> saveFriendLog(List<FriendLog> friendLogList){
+        return friendLogRepository.saveAll(friendLogList);
+    }
+
+
 }

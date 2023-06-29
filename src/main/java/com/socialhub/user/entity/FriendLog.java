@@ -40,4 +40,12 @@ public class FriendLog {
 
     private Integer status;
 
+    public FriendLog(FriendLog friendLog) {
+        this.requestedBy = friendLog.requestedBy;
+        this.requestedTo = friendLog.requestedTo;
+        this.action = friendLog.action;
+        this.createdAt = friendLog.createdAt;
+        this.updatedAt = friendLog.updatedAt;
+        this.status = friendLog.status;
+    }
 }
