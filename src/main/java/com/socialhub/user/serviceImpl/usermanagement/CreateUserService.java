@@ -1,8 +1,8 @@
-package com.socialhub.user.serviceImpl;
+package com.socialhub.user.serviceImpl.usermanagement;
 
 import com.socialhub.common.utility.ResponseUtil;
 import com.socialhub.dto.ResponseData;
-import com.socialhub.user.dto.CreateUserRequestDto;
+import com.socialhub.user.dto.user.CreateUserRequestDto;
 import com.socialhub.user.entity.User;
 import com.socialhub.user.entity.UserImage;
 import com.socialhub.user.serviceImpl.daoservice.UserDaoService;

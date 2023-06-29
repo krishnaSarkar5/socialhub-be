@@ -4,6 +4,7 @@ package com.socialhub.common.utility;
 
 
 import com.socialhub.common.enums.DateFormat;
+import com.socialhub.common.enums.FriendAction;
 import com.socialhub.common.enums.Gender;
 
 import java.time.LocalDate;
@@ -108,7 +109,21 @@ public class DtoValidation {
 
 
 
+    public static void actionCheck(String value,Map<String,Object> errorMap){
 
+        try {
+            FriendAction friendAction = FriendAction.valueOf(value.trim().toUpperCase());
+
+            if(Objects.isNull(friendAction)){
+                errorMap.put("Message","Invalid action field "+value);
+            }
+
+        }catch (Exception e){
+            errorMap.put("Message","Invalid action field "+value);
+        }
+
+
+    }
 
 
 

@@ -8,6 +8,6 @@ import java.util.List;
 public interface PostRepository extends JpaRepository<Post,Long> {
 
 
-    public List<Post> findByCreatedByIdInAndStatus(List<Long> userId, Integer status);
+    public List<Post> findByCreatedByIdInAndStatusOrderByCreatedAtDesc(List<Long> userId, Integer status);
 
 }

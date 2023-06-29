@@ -1,7 +1,7 @@
 package com.socialhub.user.controller;
 
 import com.socialhub.dto.ResponseData;
-import com.socialhub.user.dto.CreateUserRequestDto;
+import com.socialhub.user.dto.user.CreateUserRequestDto;
 import com.socialhub.user.service.UserService;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.http.HttpStatus;

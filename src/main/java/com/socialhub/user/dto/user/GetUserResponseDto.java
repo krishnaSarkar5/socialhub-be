@@ -1,4 +1,4 @@
-package com.socialhub.user.dto;
+package com.socialhub.user.dto.user;
 
 import com.socialhub.common.utility.CommonUtils;
 import com.socialhub.user.entity.User;

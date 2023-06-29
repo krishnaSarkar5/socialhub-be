@@ -1,7 +1,7 @@
 package com.socialhub.user.service;
 
 import com.socialhub.dto.ResponseData;
-import com.socialhub.user.dto.CreateUserRequestDto;
+import com.socialhub.user.dto.user.CreateUserRequestDto;
 
 public interface UserService {
 

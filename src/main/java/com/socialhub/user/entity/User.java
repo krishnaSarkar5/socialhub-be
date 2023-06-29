@@ -3,13 +3,12 @@ package com.socialhub.user.entity;
 
 import com.socialhub.common.enums.Role;
 import com.socialhub.common.utility.ActiveInactiveStatusUtil;
-import com.socialhub.user.dto.CreateUserRequestDto;
+import com.socialhub.user.dto.user.CreateUserRequestDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
-import org.w3c.dom.stylesheets.LinkStyle;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;

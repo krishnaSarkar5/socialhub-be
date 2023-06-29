@@ -24,7 +24,7 @@ public class PostDaoService {
 
 
     public List<Post>  getAllPostByUserIdList(List<Long> userIdList){
-        return postRepository.findByCreatedByIdInAndStatus(userIdList,ActiveInactiveStatusUtil.getACTIVE());
+        return postRepository.findByCreatedByIdInAndStatusOrderByCreatedAtDesc(userIdList,ActiveInactiveStatusUtil.getACTIVE());
     }
 
 

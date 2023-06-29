@@ -72,7 +72,7 @@ public class GetPostService {
 
         List<Long> friendIdList = getFriendIdList(loggedInUser.getId());
 
-        List<Post> allPostForFriendIdList = getAllPostForUserIdList(friendIdList);
+        List<Post> allPostForFriendIdList = getAllPostForUserIdList(friendIdList).stream().sorted((x,y)->x.getCreatedAt().isBefore(y.getCreatedAt())?1:-1).collect(Collectors.toList());
 
         Set<Long> postIdSet = allPostForFriendIdList.stream().map(post -> post.getId()).collect(Collectors.toSet());
 
@@ -90,7 +90,7 @@ public class GetPostService {
 
     private Map<Post,List<Comment>> getPostCommentsMap(List<Post> allPost,List<Comment> allComments){
 
-        Map<Post,List<Comment>> postCommentsMap = new HashMap<>();
+        Map<Post,List<Comment>> postCommentsMap = new LinkedHashMap<>();
 
         for(Post post : allPost){
 

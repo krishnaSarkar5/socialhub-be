@@ -43,8 +43,8 @@ public class PostDto {
         this.id = post.getId();
         this.postText = post.getPostText();
         this.postedBy = post.getCreatedBy().getId();
-        this.createdAt = CommonUtils.getDateInFrontendDateFormat(post.getCreatedAt());
-        this.updatedAt = CommonUtils.getDateInFrontendDateFormat(post.getUpdatedAt());
+        this.createdAt = CommonUtils.getDateInFrontendDateTimeFormat(post.getCreatedAt());
+        this.updatedAt = CommonUtils.getDateInFrontendDateTimeFormat(post.getUpdatedAt());
         this.status = post.getStatus();
     }
 }

@@ -1,9 +1,8 @@
-package com.socialhub.user.serviceImpl;
+package com.socialhub.user.serviceImpl.usermanagement;
 
 import com.socialhub.dto.ResponseData;
-import com.socialhub.user.dto.CreateUserRequestDto;
+import com.socialhub.user.dto.user.CreateUserRequestDto;
 import com.socialhub.user.service.UserService;
-import com.socialhub.user.serviceImpl.daoservice.GetUserService;
 import org.springframework.stereotype.Service;
 
 @Service

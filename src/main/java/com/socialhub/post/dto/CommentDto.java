@@ -42,8 +42,8 @@ public class CommentDto {
 
         this.id=comment.getId();
         this.commentText=comment.getCommentText();
-        this.createdAt= CommonUtils.getDateInFrontendDateFormat(comment.getCreatedAt());
-        this.updatedAt= CommonUtils.getDateInFrontendDateFormat(comment.getUpdatedAt());
+        this.createdAt= CommonUtils.getDateInFrontendDateTimeFormat(comment.getCreatedAt());
+        this.updatedAt= CommonUtils.getDateInFrontendDateTimeFormat(comment.getUpdatedAt());
         this.postId= comment.getPostId();
         this.commentBy=comment.getCommentBy();
 
