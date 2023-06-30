@@ -17,12 +17,13 @@ import java.util.stream.Collectors;
 @NoArgsConstructor
 public class GetUserResponseDto {
 
-
     private String email;
-
 
     private String phone;
 
+    private String firstName;
+
+    private String lastName;
 
     private String createdAt;
 

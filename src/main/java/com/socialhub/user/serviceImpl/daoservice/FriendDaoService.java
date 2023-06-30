@@ -37,7 +37,7 @@ public class FriendDaoService {
 
 
     public List<User> getAllFriends(Long user1){
-        List<Friend> allFriends = friendRepository.findAllFriends(user1, ActiveInactiveStatusUtil.getACTIVE());
+        List<Friend> allFriends = friendRepository.findAllFriendsWithStatus(user1, ActiveInactiveStatusUtil.getACTIVE());
 
 
         List<User> friendList = allFriends.stream().map((friend -> friend.getUser1().getId().equals(user1) ? friend.getUser2() : friend.getUser1())).collect(Collectors.toList());

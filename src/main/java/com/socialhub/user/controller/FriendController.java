@@ -46,4 +46,10 @@ public class FriendController {
     }
 
 
+    @GetMapping("/all-friends")
+    @SecurityRequirement(name = "bearer-key")
+    public ResponseEntity<ResponseData> getAllFriends(){
+        return new ResponseEntity<>(friendService.getAllFriends(),HttpStatus.OK);
+    }
+
 }

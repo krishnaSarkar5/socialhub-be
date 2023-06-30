@@ -2,7 +2,7 @@ package com.socialhub.common.enums;
 
 public enum Role {
 
-    USER("ROLE_USE"),
+    USER("ROLE_USER"),
     ADMIN("ROLE_ADMIN");
 
     private String value;
