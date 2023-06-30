@@ -1,8 +1,10 @@
-package com.socialhub.user.serviceImpl.friendmanagement;
+package com.socialhub.user.serviceImpl.friend;
 
 import com.socialhub.dto.ResponseData;
 import com.socialhub.user.dto.friend.IdDto;
 import com.socialhub.user.service.FriendService;
+import com.socialhub.user.serviceImpl.daoservice.FriendDaoService;
+import com.socialhub.user.serviceImpl.friend.FriendLogService;
 import org.springframework.stereotype.Service;
 
 
@@ -12,8 +14,12 @@ public class FriendServiceImpl implements FriendService {
 
     private FriendLogService friendLogService;
 
-    public FriendServiceImpl(FriendLogService friendLogService) {
+
+    private FriendDaoService friendDaoService;
+
+    public FriendServiceImpl(FriendLogService friendLogService,FriendDaoService friendDaoService) {
         this.friendLogService=friendLogService;
+        this.friendDaoService=friendDaoService;
     }
 
     @Override
